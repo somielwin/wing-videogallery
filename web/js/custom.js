@@ -42,7 +42,6 @@ function onYouTubeIframeAPIReady() {
         	} else {
         		_thisbtn.addClass('pause');
         		$('.video-holder').addClass('opac').removeClass('z-index');
-        		player.pauseVideo(2);
         	}
         } else {
         	stopVideo();
