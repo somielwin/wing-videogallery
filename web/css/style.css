@@ -278,8 +278,11 @@ strong {
     left: 0;
     height: auto;
     text-align: right;
-    padding-right: 10px;
     z-index: 999;
+}
+
+.download-btn .fr {
+    padding-right: 15px;
 }
 
 .download-btn a {
@@ -327,4 +330,50 @@ strong {
 .container {
     max-width: 1024px;
     margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+
+    .logo {
+        float: none;
+        clear: both;
+        margin: 0 auto;
+    }
+
+    .download-btn {
+        text-align: center;
+        position: relative;
+    }
+
+    #main-wrapper {
+        padding-top: 0;
+    }
+
+    .download-btn .fr {
+        padding-right: 0;
+    }
+
+    .download-btn label {
+        display: block;
+        text-align: center;
+        font-size: 14px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 640px) {
+
+    
+
+    .gallery-video-list ul {
+        display: block;
+        float: none;
+        clear: both;
+    }
+
+    .gallery-video-list ul li {
+        width: 100%;
+    }
+
+    
 }
