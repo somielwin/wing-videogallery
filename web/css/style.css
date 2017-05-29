@@ -332,6 +332,13 @@ strong {
     margin: 0 auto;
 }
 
+@media (max-width: 991px) {
+
+    .gallery-video-list ul li {
+        padding: 0px 10px 25px;
+    }
+}
+
 @media (max-width: 767px) {
 
     .logo {
@@ -359,11 +366,13 @@ strong {
         font-size: 14px;
         margin-right: 0;
     }
+
+    .gv-img {
+        margin-bottom: 5px;
+    }
 }
 
 @media (max-width: 640px) {
-
-    
 
     .gallery-video-list ul {
         display: block;
@@ -373,7 +382,6 @@ strong {
 
     .gallery-video-list ul li {
         width: 100%;
+        padding: 0px 15px 35px;
     }
-
-    
 }
