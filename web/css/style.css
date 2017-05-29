@@ -323,3 +323,8 @@ strong {
     height: auto;
     display: block;
 }
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
