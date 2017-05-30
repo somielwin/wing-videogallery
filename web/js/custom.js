@@ -6,6 +6,13 @@ $(window).resize(function() {
 
 $(document).ready(function() {
 	setupYTAPI();
+
+    $(document).on('click', '.close-video', function(e){
+        e.preventDefault();
+        player.pauseVideo(2);
+        console.log('test');
+        $('.popup-wrap').removeClass('active');
+    });
 });
 
 $(window).load(function() {
@@ -24,29 +31,24 @@ var player;
 var playerVideo = "unloaded";
 
 function onYouTubeIframeAPIReady() {
-	console.log('test');
     playerVideo = "ready";
     //$(".home-slide-thumb li").each(function(index) {
     $(document).on('click', '.play-btn', function(e) {
         e.preventDefault();
         var _thisbtn = $(this);
         var videoId = $(this).attr('data-videoid');
-        var _thisIndex = $(this).closest('li').index();
 
         if ( $(_thisbtn).hasClass("isPlaying") ) {
             
         	if($(_thisbtn).hasClass('pause')) {
-        		_thisbtn.removeClass('pause');
+                $('.popup-wrap').addClass('active');
         		player.playVideo();
-        		$('.video-holder').removeClass('opac').addClass('z-index');
-        	} else {
-        		_thisbtn.addClass('pause');
-        		$('.video-holder').addClass('opac').removeClass('z-index');
-        	}
+        	} 
         } else {
         	stopVideo();
         	$('.popup-wrap').addClass('active');
-        	$(_thisbtn).addClass("isPlaying");
+            $('.gallery-video-list ul li a.isPlaying').removeClass('isPlaying').removeClass('pause');
+        	$(_thisbtn).addClass("isPlaying").addClass('pause');
         	$('.video-holder').addClass('z-index').append("<div id='player'></div>");
             $(_thisbtn).closest('li').addClass('active');
             player = new YT.Player('player', {
@@ -61,6 +63,8 @@ function onYouTubeIframeAPIReady() {
             });
         }
     });
+
+    
 	//});
 }
 
