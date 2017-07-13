@@ -55,7 +55,9 @@ table {
     box-sizing: border-box;
 }
 
-@font-face {
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+/*@font-face {
     font-family: 'roboto';
     src: url('../fonts/Roboto-Light-webfont.eot');
     src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
@@ -99,7 +101,7 @@ table {
     font-weight: 500;
     font-style: normal;
 
-}
+}*/
 
 html, body { 
     height:100%; 
@@ -133,7 +135,7 @@ strong {
 .gallery-video-list ul li {
     list-style-type: none;
     width: 33.33%;
-    padding: 0px 15px 30px;
+    padding: 0px 15px 15px;
     min-width: 260px;
 
 }
@@ -190,11 +192,11 @@ strong {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .gv-img:before {
-    content: "\f04b";
+    content:'';
     width: 50px;
     height: 50px;
     border: 2px solid #fff;
@@ -203,12 +205,8 @@ strong {
     left: 50%;
     z-index: 2;
     color: #fff;
-    display: inline-block;
-    font: normal normal normal 32px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background: url('../images/arrow.png') no-repeat center center;
+    background-size: 78%;
     border-radius: 50%;
     line-height: 50px;
     text-align: center;
@@ -227,13 +225,20 @@ strong {
     transform: translate(-50%, -50%);
 }
 
-.gv-wrap p {
+.gv-wrap strong {
     font-size: 14px;
+}
+
+.gv-wrap p {
+    font-size: 12px;
     color: #4d4d4f;
+    padding: 0px 10px 3px;
+    text-align: left;
+
 }
 
 .popup-wrap {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
@@ -251,12 +256,14 @@ strong {
 }
 
 .popup-content {
-    position: fixed;
+    position: relative;
+    max-width: 800PX;
     width: 100%;
     height: 0;
     top: 50%;
+    margin: 0 auto;
     transform: translate(0, -50%);
-    padding-bottom: 56%;
+    padding-bottom: 46%;
     background: #000;
 }
 
@@ -350,13 +357,32 @@ strong {
     line-height: 25px;
     position: absolute;
     z-index: 2;
+    text-align: center;   
+}
+
+.close-video img {
+    display: block;
+}
+
+
+.banner-wrap {
+    max-width: 800px;
+    height: auto;
+    display: block;
     text-align: center;
+    margin: 10px auto 0;
+}
+
+.banner-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 @media (max-width: 991px) {
 
     .gallery-video-list ul li {
-        padding: 0px 10px 25px;
+        padding: 0px 10px 20px;
     }
 }
 
@@ -395,6 +421,14 @@ strong {
 
 @media (max-width: 640px) {
 
+    .logo {
+        display: none;
+    }
+
+    .banner-wrap {
+        margin-top: 0;
+    }
+
     .gallery-video-list ul {
         display: block;
         float: none;
@@ -403,6 +437,6 @@ strong {
 
     .gallery-video-list ul li {
         width: 100%;
-        padding: 0px 15px 35px;
+        padding: 0px 15px 25px;
     }
 }
