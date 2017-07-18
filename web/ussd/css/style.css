@@ -103,6 +103,10 @@ table {
 
 }*/
 
+body, p, i, li, a, b, strong, div, span {
+    word-wrap: break-word;
+}
+
 html, body { 
     height:100%; 
     min-height:100%;
@@ -234,6 +238,7 @@ strong {
     color: #4d4d4f;
     padding: 0px 10px 3px;
     text-align: left;
+    word-break: break-all;
 
 }
 
