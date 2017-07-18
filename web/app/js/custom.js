@@ -43,6 +43,7 @@ function onYouTubeIframeAPIReady() {
         	if($(_thisbtn).hasClass('pause')) {
                 $('.popup-wrap').addClass('active');
         		player.playVideo();
+                scrollTo();
         	} 
         } else {
         	stopVideo();
@@ -61,6 +62,7 @@ function onYouTubeIframeAPIReady() {
                     'onStateChange': onPlayerStateChange
                 }
             });
+            scrollTo();
         }
     });
 
@@ -69,6 +71,13 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+}
+
+function scrollTo() {
+    var body = $("html, body");
+    var offset = $('.popup-wrap').offset();
+    var offsetTop = offset.top;
+    body.stop().animate({scrollTop: offsetTop}, 500, 'swing');
 }
 
 function onPlayerStateChange(event) {
