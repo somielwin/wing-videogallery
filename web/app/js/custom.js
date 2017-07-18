@@ -47,7 +47,7 @@ function onYouTubeIframeAPIReady() {
                 var body = $("html, body");
                 var offset = $('.popup-wrap').offset();
                 var offsetTop = offset.top - 100;
-                $("html, body").animate({scrollTop: offsetTop}, 500);
+                $("html, body").animate({scrollTop: 0}, 500);
         	} 
         } else {
         	stopVideo();
@@ -69,7 +69,7 @@ function onYouTubeIframeAPIReady() {
             var body = $("html, body");
             var offset = $('.popup-wrap').offset();
             var offsetTop = offset.top - 100;
-            $("html, body").animate({scrollTop: offsetTop}, 500);
+            $("html, body").animate({scrollTop: 0}, 500);
             
         }
     });
