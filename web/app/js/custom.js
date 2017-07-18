@@ -42,14 +42,16 @@ function onYouTubeIframeAPIReady() {
             
         	if($(_thisbtn).hasClass('pause')) {
                 $('.popup-wrap').addClass('active');
-                scrollTo();
-        		player.playVideo();
                 
+        		player.playVideo();
+                var body = $("html, body");
+                var offset = $('.popup-wrap').offset();
+                var offsetTop = offset.top - 100;
+                $("html, body").animate({scrollTop: offsetTop}, 500);
         	} 
         } else {
         	stopVideo();
         	$('.popup-wrap').addClass('active');
-            scrollTo();
             $('.gallery-video-list ul li a.isPlaying').removeClass('isPlaying').removeClass('pause');
         	$(_thisbtn).addClass("isPlaying").addClass('pause');
         	$('.video-holder').addClass('z-index').append("<div id='player'></div>");
@@ -64,6 +66,10 @@ function onYouTubeIframeAPIReady() {
                     'onStateChange': onPlayerStateChange
                 }
             });
+            var body = $("html, body");
+            var offset = $('.popup-wrap').offset();
+            var offsetTop = offset.top - 100;
+            $("html, body").animate({scrollTop: offsetTop}, 500);
             
         }
     });
@@ -75,13 +81,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
 }
 
-function scrollTo() {
-    var body = $("html, body");
-    var offset = $('.popup-wrap').offset();
-    var offsetTop = offset.top;
-    body.animate({scrollTop: offsetTop}, 500, 'swing');
-    console.log(offsetTop);
-}
+
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
