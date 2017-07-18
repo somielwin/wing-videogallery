@@ -42,12 +42,14 @@ function onYouTubeIframeAPIReady() {
             
         	if($(_thisbtn).hasClass('pause')) {
                 $('.popup-wrap').addClass('active');
-        		player.playVideo();
                 scrollTo();
+        		player.playVideo();
+                
         	} 
         } else {
         	stopVideo();
         	$('.popup-wrap').addClass('active');
+            scrollTo();
             $('.gallery-video-list ul li a.isPlaying').removeClass('isPlaying').removeClass('pause');
         	$(_thisbtn).addClass("isPlaying").addClass('pause');
         	$('.video-holder').addClass('z-index').append("<div id='player'></div>");
@@ -62,7 +64,7 @@ function onYouTubeIframeAPIReady() {
                     'onStateChange': onPlayerStateChange
                 }
             });
-            scrollTo();
+            
         }
     });
 
