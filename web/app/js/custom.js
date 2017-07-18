@@ -78,6 +78,7 @@ function scrollTo() {
     var offset = $('.popup-wrap').offset();
     var offsetTop = offset.top;
     body.stop().animate({scrollTop: offsetTop}, 500, 'swing');
+    consoel.log(offsetTop);
 }
 
 function onPlayerStateChange(event) {
